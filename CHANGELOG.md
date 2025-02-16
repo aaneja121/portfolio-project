@@ -13,3 +13,7 @@ the following form: YYYY.0M.0D.
 - Created new kernel methods for NBA lineup tracker: void addPlayer(),
 void removePlayer(), void subPlayer(), int size()
 - New secondary methods for NBA lineup tracker: void makeBest()
+
+## [2025.02.16]
+- Created new branch from main called proof-of-concept
+- Made argument for my project component
