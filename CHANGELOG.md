@@ -9,11 +9,18 @@ the following form: YYYY.0M.0D.
 ## [Unreleased]
 
 ## [2025.02.04]
+
+## Added
 - Created new changelog
 - Created new kernel methods for NBA lineup tracker: void addPlayer(),
 void removePlayer(), void subPlayer(), int size()
 - New secondary methods for NBA lineup tracker: void makeBest()
 
 ## [2025.02.16]
-- Created new branch from main called proof-of-concept
-- Made argument for my project component
+
+## Added
+- New branch from main called proof-of-concept
+- Argument for my project component
+
+## Created
+- New java file to write code for Lineup component
