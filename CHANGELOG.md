@@ -24,3 +24,9 @@ void removePlayer(), void subPlayer(), int size()
 
 ## Created
 - New java file to write code for Lineup component
+
+## [2025.02.18]
+
+## Added
+
+- Basic code for the lineup component
