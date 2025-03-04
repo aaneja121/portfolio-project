@@ -24,3 +24,11 @@ void removePlayer(), void subPlayer(), int size()
 
 ## Created
 - New java file to write code for Lineup component
+
+## [2025.03.04]
+
+## Added
+- Designed kernel and enhanced interfaces for NBA Lineup Creator component
+
+## Updated
+- Changed design to include separate lineup component class from player basics class
