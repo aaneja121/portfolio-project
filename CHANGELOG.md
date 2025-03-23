@@ -42,5 +42,9 @@ void removePlayer(), void subPlayer(), int size()
 - LineupComponentSecondary class as part of abstract-class assignment
 
 ## Created
+<<<<<<< Updated upstream
+- New
+>>>>>>> Stashed changes
+=======
 - New
 >>>>>>> Stashed changes
