@@ -2,7 +2,7 @@
  * Enhanced interface for LineupComponent.
  * This component will further enhance the team's lineup with methods not provided in the basic interface.
  */
-public interface LineupComponentEnhanced extends LineupComponentKernel {
+public interface LineupComponent extends LineupComponentKernel {
 
     /**
      * Generates and shows the best lineup based on points per game.
