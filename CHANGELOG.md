@@ -23,4 +23,25 @@ void removePlayer(), void subPlayer(), int size()
 - Argument for my project component
 
 ## Created
+<<<<<<< Updated upstream
 - New java file to write code for Lineup component
+=======
+- New java file to write code for Lineup component
+
+## [2025.03.04]
+
+## Added
+- Designed kernel and enhanced interfaces for NBA Lineup Creator component
+
+## Updated
+- Changed design to include separate lineup component class from player basics class
+
+## [2025.03.23]
+
+## Added
+- LineupComponentSecondary class as part of abstract-class assignment
+
+## [2025.04.07]
+
+## Added
+- LineupComponent1L class as part of kernel-implementation assignment
