@@ -34,6 +34,7 @@ public class LineupComponent1L extends LineupComponentSecondary {
         return false;
     }
 
+    @Override
     public final void addPlayer(String name, String pos, double statistic) {
 
         if (this.isPosition(pos)) {
@@ -44,6 +45,7 @@ public class LineupComponent1L extends LineupComponentSecondary {
 
     }
 
+    @Override
     public final void removePlayer(String name, String pos) {
         if (this.isPosition(pos)) {
             List<PlayerBasics> playerNames = this.team.get(pos);
@@ -62,6 +64,7 @@ public class LineupComponent1L extends LineupComponentSecondary {
         }
     }
 
+    @Override
     public final void subPlayer(String name, String pos, String newName,
             double newStatistic) {
         if (this.isPosition(pos)) {
@@ -92,6 +95,7 @@ public class LineupComponent1L extends LineupComponentSecondary {
 
     }
 
+    @Override
     public final int size() {
         int playerCount = 0;
         for (String pos : positions) {
@@ -100,6 +104,7 @@ public class LineupComponent1L extends LineupComponentSecondary {
         return playerCount;
     }
 
+    @Override
     public final void makeBest() {
         Map<String, PlayerBasics> best = new HashMap<>();
         for (String pos : positions) {
@@ -125,6 +130,26 @@ public class LineupComponent1L extends LineupComponentSecondary {
                         pos + ": You have no players at this position");
             }
         }
+    }
+
+}
+    public void clear() {
+        this.lineup = this.createNewRep();
+    }
+
+    @Override
+    public LineupComponent newInstance() {
+        return new LineupComponent1L();
+    }
+
+    @Override
+    public void transferFrom(LineupComponent source) {
+        assert source != null : "Violation of: source is not null";
+        assert source instanceof LineupComponent1L : "Violation of: source is LineupComponent1L";
+
+        LineupComponent1L local = (LineupComponent1L) source;
+        this.lineup = local.lineup;
+        local.lineup = local.createNewRep();
     }
 
 }
