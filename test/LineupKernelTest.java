@@ -7,85 +7,101 @@ import org.junit.Test;
 public class LineupKernelTest {
 
     @Test
-    public void testAddPlayer() {
-        LineupComponent component = new LineupComponent1L();
-        component.addPlayer("Curry", "PG", 30.0);
-        Iterator<PlayerBasics> iterate = component.playersAt("PG");
-        assertTrue(iterate.hasNext());
-        assertEquals("Curry", iterate.next().name());
+    LineupComponent component = new LineupComponent1L();component.addPlayer("Darius Garland","PG",20.6Iterator<PlayerBasics> iterate = thiscompoent.pl
+    assertTrue(iterate.hasNext());
+
+    assertEquals("Darius Garland", iterate.next().name());
     }
 
     @Test
     public void testAddMultiplePlayers() {
         LineupComponent component = new LineupComponent1L();
-        component.addPlayer("Curry", "PG", 30.0);
-        component.addPlayer("Paul", "PG", 17.0);
+        component.addPlayer("Darius Garland", "PG", 20.6);
+        component.addPlayer("Craig Porter Jr.", "PG", 3.7);
         Iterator<PlayerBasics> iterate = component.playersAt("PG");
-        assertEquals("Curry", iterate.next().name());
-        assertEquals("Paul", iterate.next().name());
+        assertEquals("Darius Garland", iterate.next().name());
+        assertEquals("Craig Porter Jr.", iterate.next().name());
     }
 
     @Test
     public void testAddMultiplePlayersDiffPositions() {
         LineupComponent component = new LineupComponent1L();
-        component.addPlayer("Curry", "PG", 30.0);
-        component.addPlayer("Booker", "SG", 28.0);
-        Iterator<PlayerBasics> g1 = component.playersAt("PG");
-        Iterator<PlayerBasics> g2 = component.playersAt("SG");
-        assertEquals("Curry", g1.next().name());
-        assertEquals("Booker", g2.next().name());
+        component.addPlayer("Darius Garland", "PG", 20.6);
+        component.addPlayer("Donovan Mitchell", "SG", 24.0);
+        Iterator<PlayerBasics> p1 = component.playersAt("PG");
+        Iterator<PlayerBasics> p2 = component.playersAt("SG");
+        assertEquals("Darius Garland", p1.next().name());
+        assertEquals("Donovan Mitchell", p2.next().name());
     }
 
     @Test
     public void testRemovePlayer() {
         LineupComponent component = new LineupComponent1L();
-        component.addPlayer("Curry", "PG", 30.0);
-        component.removePlayer("Curry", "PG");
+        component.addPlayer("Darius Garland", "PG", 20.3);
+        component.removePlayer("Darius Garland", "PG");
         assertFalse(component.playersAt("PG").hasNext());
     }
 
     @Test
     public void testSubPlayer() {
         LineupComponent component = new LineupComponent1L();
-        component.addPlayer("Curry", "PG", 30.0);
-        component.subPlayer("Curry", "PG", "Paul", 17.0);
-        assertEquals("Paul", component.playersAt("PG").next().getName());
+        component.addPlayer("Darius Garland", "PG", 20.6);
+        component.subPlayer("Darius Garland", "PG", "Craig Porter Jr.", 2.8);
+        assertEquals("Craig Porter Jr.",
+                component.playersAt("PG").next().name());
     }
 
     @Test
     public void testSizeAfterAddRemove() {
         LineupComponent component = new LineupComponent1L();
-        component.addPlayer("A", "PG", 1);
-        component.addPlayer("B", "SG", 1);
+        component.addPlayer("Darius Garland", "PG", 20.6);
+        component.addPlayer("Donovan Mitchell", "SG", 24.0);
         assertEquals(2, component.size());
-        component.removePlayer("A", "PG");
+        component.removePlayer("Darius Garland", "PG");
         assertEquals(1, component.size());
     }
 
     @Test
     public void testAddPlayerNonPosition() {
         LineupComponent component = new LineupComponent1L();
-        component.addPlayer("Unknown", "Coach", 0);
+        component.addPlayer("Kenny Atkinson", "Coach", 0);
     }
 
     @Test
     public void testRemoveNonPlayer() {
         LineupComponent component = new LineupComponent1L();
-        component.removePlayer("Ghost", "PG");
+        component.removePlayer("Garius Darland", "PG");
     }
 
     @Test
     public void testSubNonPlayer() {
         LineupComponent component = new LineupComponent1L();
-        component.subPlayer("Ghost", "PG", "Paul", 17.0);
+        component.subPlayer("Garius Darland", "PG", "Craig Porter Jr.", 3.7);
     }
 
     @Test
     public void testClearAfterAdd() {
         LineupComponent component = new LineupComponent1L();
-        component.addPlayer("A", "PG", 1);
+        component.addPlayer("Jarrett Allen", "C", 13.6);
         component.clear();
         assertEquals(0, component.size());
+    }
+
+    @Test
+    public void testNewInstanceCreatesEmpty() {
+        LineupComponent component = new LineupComponent1L();
+        LineupComponent newComponent = component.newInstance();
+        assertEquals(0, newComponent.size());
+    }
+
+    @Test
+    public void testTransferFrom() {
+        LineupComponent main = new LineupComponent1L();
+        main.addPlayer("Evan Mobley", "PF", 18.5);
+        LineupComponent newComponent = new LineupComponent1L();
+        newComponent.transferFrom(main);
+        assertEquals(1, newComponent.size());
+        assertEquals(0, main.size());
     }
 
 }
