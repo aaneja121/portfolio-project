@@ -3,15 +3,26 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class LineupComponent {
-    private static final String[] positions = { "PG", "SG", "SF", "PF", "C" };
-    private Map<String, List<PlayerBasics>> team;
+/**
+ * Convention: - `lineup` has only valid positions, which are: {"PG", "SG",
+ * "SF", "PF", "C"}. - Every player has their own PlayerBasics objects, which
+ * are their name and position.
+ *
+ * Correspondence: - `this` is the current starting lineup. - Key-value pairs in
+ * `lineup` equates to a position and its current starter.
+ */
 
-    public LineupComponent() {
-        this.team = new HashMap<>();
-        for (String pos : positions) {
-            this.team.put(pos, new ArrayList<>());
-        }
+public class LineupComponent1L extends LineupComponentSecondary {
+
+    private Map<String, List<PlayerBasics>> lineup;
+
+    public LineupComponent1L() {
+        this.lineup = new HashMap<>();
+        this.lineup.put("PG", new ArrayList<>());
+        this.lineup.put("SG", new ArrayList<>());
+        this.lineup.put("SF", new ArrayList<>());
+        this.lineup.put("PF", new ArrayList<>());
+        this.lineup.put("C", new ArrayList<>());
     }
 
     private boolean isPosition(String pos) {
@@ -23,6 +34,7 @@ public class LineupComponent {
         return false;
     }
 
+    @Override
     public final void addPlayer(String name, String pos, double statistic) {
 
         if (this.isPosition(pos)) {
@@ -33,6 +45,7 @@ public class LineupComponent {
 
     }
 
+    @Override
     public final void removePlayer(String name, String pos) {
         if (this.isPosition(pos)) {
             List<PlayerBasics> playerNames = this.team.get(pos);
@@ -51,6 +64,7 @@ public class LineupComponent {
         }
     }
 
+    @Override
     public final void subPlayer(String name, String pos, String newName,
             double newStatistic) {
         if (this.isPosition(pos)) {
@@ -81,6 +95,7 @@ public class LineupComponent {
 
     }
 
+    @Override
     public final int size() {
         int playerCount = 0;
         for (String pos : positions) {
@@ -89,6 +104,7 @@ public class LineupComponent {
         return playerCount;
     }
 
+    @Override
     public final void makeBest() {
         Map<String, PlayerBasics> best = new HashMap<>();
         for (String pos : positions) {
@@ -116,22 +132,24 @@ public class LineupComponent {
         }
     }
 
-    public static void main(String[] args) {
-        LineupComponent lineup = new LineupComponent();
-
-        // Here is where I'll input the starting lineup for the Cavs (I'm a Cavs fan)
-        lineup.addPlayer("Darius Garland", "PG", 21.3);
-        lineup.addPlayer("Donovan Mitchell", "SG", 24.3);
-        lineup.addPlayer("Isaac Okoro", "SF", 5.3);
-        lineup.addPlayer("Dean Wade", "PF", 5.7);
-        lineup.addPlayer("Tristan Thompson", "PF", 1.6);
-        lineup.addPlayer("Ty Jerome", "SG", 11.8);
-
-        // Here is where I'll generate the best lineup for the Cavs.
-        lineup.makeBest();
-
-        // Here is where I'll sub out players for other players
-        lineup.subPlayer("Dean Wade", "PF", "Emoni Bates", 0.9);
-
+}
+    public void clear() {
+        this.lineup = this.createNewRep();
     }
+
+    @Override
+    public LineupComponent newInstance() {
+        return new LineupComponent1L();
+    }
+
+    @Override
+    public void transferFrom(LineupComponent source) {
+        assert source != null : "Violation of: source is not null";
+        assert source instanceof LineupComponent1L : "Violation of: source is LineupComponent1L";
+
+        LineupComponent1L local = (LineupComponent1L) source;
+        this.lineup = local.lineup;
+        local.lineup = local.createNewRep();
+    }
+
 }

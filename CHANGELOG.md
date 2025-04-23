@@ -24,3 +24,9 @@ void removePlayer(), void subPlayer(), int size()
 
 ## Created
 - New java file to write code for Lineup component
+
+## [2025.04.16]
+
+### Added
+- Designed test suite for NBA Lineup Creator component
+- Designed two different use cases for NBA Lineup Creator component
