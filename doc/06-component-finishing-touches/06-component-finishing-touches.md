@@ -305,18 +305,28 @@ Take some time to fill them out honestly.
 > complete the portfolio project, how much better (or worse) do you think you
 > understand software development and why?
 
-<!-- TODO: discuss -->
+Thanks to this project, I understand software development much more now. I had never
+really completed any hands-on projects to this extent before, but being able to create
+a kernel class, a seconary class, and an enhanced class (along with every other part
+that comes with making your own component) has taught me a lot about the OSU discipline
+of software development.
 
 > Also, did the portfolio project surface any gaps in your own knowledge of
 > software development. If so, what are those gaps and how did you address them?
 
-<!-- TODO: discuss -->
+To be entirely honest, it did not. Throughout winter break, I did a lot of research
+into how software development works at OSU, and I even heard about the portfolio project
+through one of my friends who completed this class a few semesters ago.
 
 > Finally, as a part of completing the portfolio project, to what extent has
 > your perspective of software development changed, if at all? In other words,
 > is software development something you still enjoy? If not, why not?
 
-<!-- TODO: discuss -->
+Software development is absolutely something that I enjoy, as I just completed a
+dev project that revolves around my biggest passion: Sports. It is my dream to
+become the general manager of a sports franchise, and I want to work my way up
+the ranks via software development and data analytics, so this project gave me an
+insight into what that's like.
 
 > One of the challenges of completing the portfolio project is picking up a lot
 > of skills on your own. Some of these skills are, of course, software skills.
@@ -324,29 +334,38 @@ Take some time to fill them out honestly.
 > this process. Therefore, the first question is what skills did you pick up
 > through this process?
 
-<!-- TODO: discuss -->
+I would say that the main skill I picked up on was writing code for kernel classes.
+I also improved greatly at navigating my GitHub repositories. I found that very
+confusing at first, but as I kept using Git throughout the year, I have become
+well-versed in that department.
 
 > The follow-up question is: could you rephrase these skills you picked up
 > as bullet points that you could put on a resume? Try it below.
 
-<!-- TODO: discuss -->
+- Developed own Java component through the use of kernel and component classes
+- Navigated GitHub and Git for review from professor
 
 > Next, how has working on this project affected your career trajectory?
 > In other words, do you now hate the topic you picked? Or, are you even more
 > interested in it? Both outcomes are valuable to your personal development.
 
-<!-- TODO: discuss -->
+This project furthered my interest in sports analytics. I remember attending the
+MIT Sports Analytics Conference in Boston about a month ago, and I told one of the
+speakers about this project. He told me that, if I perfect my skills in software
+development, I could receive an interview from his franchise to intern there. This
+motivated me to complete this project to the best of my abilities.
 
 > Finally, consider the skills you've picked up and your current career
 > trajectory. What are some things you could do to continue on your
 > career trajectory? Also, who are some mentors you could contact to help
 > you stay on your path?
 
-<!-- TODO: discuss -->
-
+I would love to bring this project to new heights. For example, I could utilize
+real Java APIs that carry live NBA statistics for everything I want to analyze.
+I would love to stay in contact with Mr. Grifski, as he helped me tighten the screws
+on this project, as well as the board members of the OSU Sports Analytics Association,
+all of whom are well-versed in everything that I want to thrive in.
 ### Changelog
-
-<!-- TODO: update CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
